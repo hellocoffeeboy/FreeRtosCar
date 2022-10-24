@@ -2,6 +2,7 @@
 #include "delay.h"
 #include "FreeRTOS.h"
 #include "task.h"
+#include "key.h"
 
 //初始化PC14为输出口.并使能这两个口的时钟		    
 //LED IO初始化
@@ -24,8 +25,10 @@ void led0_task(void *pvParameters)
 {
     while(1)
     {
-        LED0=~LED0;
-        vTaskDelay(500);
+        if (Key_Scan(0) == 1)
+		{
+			LED0 = !LED0;
+		}
     }
 }   
 

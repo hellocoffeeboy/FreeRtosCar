@@ -72,8 +72,8 @@
 #define LED0_TASK_PRIO		2
 #define LED0_STK_SIZE 		50 
 
-#define LED1_TASK_PRIO		3
-#define LED1_STK_SIZE 		50  
+#define KEY0_TASK_PRIO		2
+#define KEY0_STK_SIZE 		50  
 
 
 //以下为汇编函数

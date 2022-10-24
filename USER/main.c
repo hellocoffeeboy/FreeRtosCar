@@ -3,9 +3,9 @@
 #include "sys.h"
 #include "FreeRTOS.h"
 #include "task.h"
+#include "key.h"
 
 TaskHandle_t StartTask_Handler;
-TaskHandle_t LED1Task_Handler;
 TaskHandle_t LED0Task_Handler;
 
 int main(void)
@@ -14,6 +14,7 @@ int main(void)
 	delay_init();	    				//延时函数初始化	  
 	uart_init(115200);					//初始化串口
 	LED_Init();		  					//初始化LED
+	KEY_Init();                         //初始化KEY
 	
 	 
 	//创建开始任务
@@ -39,6 +40,7 @@ void start_task(void *pvParameters)
                 (void*          )NULL,				
                 (UBaseType_t    )LED0_TASK_PRIO,	
                 (TaskHandle_t*  )&LED0Task_Handler);   
+				
 				
     vTaskDelete(StartTask_Handler); //删除开始任务
     taskEXIT_CRITICAL();            //退出临界区
