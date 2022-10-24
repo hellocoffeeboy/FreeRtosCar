@@ -43,3 +43,4 @@
 ..\obj\led.o: ..\FreeRTOS\include\mpu_wrappers.h
 ..\obj\led.o: ..\FreeRTOS\include\task.h
 ..\obj\led.o: ..\FreeRTOS\include\list.h
+..\obj\led.o: ..\HARDWARE\KEY\key.h
